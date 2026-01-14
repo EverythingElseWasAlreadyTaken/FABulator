@@ -104,14 +104,14 @@ public class TileGeometry {
                 int indexY = (int) wirePoint.getY();
 
                 if (start.getX() == end.getX()) {
-                    while (indexY <= endPoint.getY()) {
+                    while (indexY <= endPoint.getY() && indexX <= this.width && indexY <= this.height) {
                         wirePointsMat[indexX][indexY]++;
                         wirePoint.setY(wirePoint.getY() + 1);
                         indexY = (int) wirePoint.getY();
                     }
 
                 } else if (start.getY() == end.getY()) {
-                    while (indexX <= endPoint.getX()) {
+                    while (indexX <= endPoint.getX() && indexX <= this.width && indexY <= this.height) {
                         wirePointsMat[indexX][indexY]++;
                         wirePoint.setX(wirePoint.getX() + 1);
                         indexX = (int) wirePoint.getX();
